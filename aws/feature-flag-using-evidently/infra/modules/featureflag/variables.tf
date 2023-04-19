@@ -1,6 +1,11 @@
 locals {
   env = var.env
 
+  bool_variations = {
+    "true"  = true
+    "false" = false
+  }
+
   tags = {
     env        = var.env
     managed_by = "terraform"
@@ -20,7 +25,6 @@ variable "project_name" {
 variable "bool_features" {
   type = map(object({
     description       = string
-    variations        = map(bool)
     default_variation = string
     overrides         = map(string)
   }))

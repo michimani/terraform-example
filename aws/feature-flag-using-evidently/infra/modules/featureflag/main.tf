@@ -13,7 +13,7 @@ resource "aws_evidently_feature" "bool_feature" {
   description = each.value.description
 
   dynamic "variations" {
-    for_each = each.value.variations
+    for_each = local.bool_variations
     iterator = v
 
     content {

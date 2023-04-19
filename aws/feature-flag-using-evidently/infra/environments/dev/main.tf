@@ -7,18 +7,16 @@ module "feature_flags" {
   bool_features = {
     "sushi" = {
       description       = "Sushi feature"
-      variations        = { "on" = true, "off" = false }
-      default_variation = "off"
+      default_variation = "false"
       overrides = {
-        "force-sushi" = "on"
+        "force-sushi" = "true"
       }
     },
     "niku" = {
       description       = "Niku feature"
-      variations        = { "on" = true, "off" = false }
-      default_variation = "on"
+      default_variation = "true"
       overrides = {
-        "vegan" = "off"
+        "vegan" = "false"
       }
     }
   }
